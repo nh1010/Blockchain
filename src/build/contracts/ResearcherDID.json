@@ -187,8 +187,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"did\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"walletAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"ResearcherRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"did\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"institution\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fieldOfStudy\",\"type\":\"string\"}],\"name\":\"ResearcherUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"did\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"}],\"name\":\"ResearcherVerified\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"}],\"name\":\"getResearcher\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"institution\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"fieldOfStudy\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"walletAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"registrationDate\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_institution\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_fieldOfStudy\",\"type\":\"string\"}],\"name\":\"registerResearcher\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_institution\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_fieldOfStudy\",\"type\":\"string\"}],\"name\":\"updateResearcherInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"}],\"name\":\"verifyResearcher\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getResearcher(string)\":{\"params\":{\"_did\":\"The DID of the researcher to retrieve.\"},\"returns\":{\"fieldOfStudy\":\"The field of study for the researcher.\",\"institution\":\"The institution or affiliation of the researcher.\",\"isVerified\":\"The verification status of the researcher.\",\"name\":\"The name of the researcher.\",\"registrationDate\":\"The registration date of the researcher.\",\"walletAddress\":\"The wallet address of the researcher.\"}},\"registerResearcher(string,string,string,string)\":{\"params\":{\"_did\":\"The unique decentralized identifier (DID) for the researcher.\",\"_fieldOfStudy\":\"The field of study for the researcher.\",\"_institution\":\"The institution or affiliation of the researcher.\",\"_name\":\"The name of the researcher.\"}},\"updateResearcherInfo(string,string,string,string)\":{\"params\":{\"_did\":\"The DID of the researcher to update.\",\"_fieldOfStudy\":\"The updated field of study.\",\"_institution\":\"The updated institution or affiliation.\",\"_name\":\"The updated name of the researcher.\"}},\"verifyResearcher(string)\":{\"details\":\"This function can be restricted to admin-only in a complete implementation.\",\"params\":{\"_did\":\"The DID of the researcher to verify.\"}}},\"title\":\"ResearcherDID - A smart contract for decentralized researcher identity management.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getResearcher(string)\":{\"notice\":\"Retrieve researcher details.\"},\"registerResearcher(string,string,string,string)\":{\"notice\":\"Register a new researcher with their DID, name, and wallet address.\"},\"updateResearcherInfo(string,string,string,string)\":{\"notice\":\"Update a researcher's profile information.\"},\"verifyResearcher(string)\":{\"notice\":\"Verify a researcher.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/researcherDID.sol\":\"ResearcherDID\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/researcherDID.sol\":{\"keccak256\":\"0x16557159c53cd852ec213e0719cf6a9c62ca5c9287893087eafdafd436fdd963\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://edea9c95f62f689730bb217edd29ae6551879bac3d4eed595597ee9a5dcccc29\",\"dweb:/ipfs/QmZch3Y1jvWm1WNtjUQH3auMJCau8bHkg9eJc6bmHgBtdU\"]}},\"version\":1}",
@@ -6597,15 +6596,15 @@
     "absolutePath": "project:/contracts/researcherDID.sol",
     "exportedSymbols": {
       "ResearcherDID": [
-        493
+        505
       ]
     },
-    "id": 494,
+    "id": 506,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 233,
+        "id": 245,
         "literals": [
           "solidity",
           "^",
@@ -6621,30 +6620,30 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 234,
+          "id": 246,
           "nodeType": "StructuredDocumentation",
           "src": "57:94:1",
           "text": "@title ResearcherDID - A smart contract for decentralized researcher identity management."
         },
         "fullyImplemented": true,
-        "id": 493,
+        "id": 505,
         "linearizedBaseContracts": [
-          493
+          505
         ],
         "name": "ResearcherDID",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "ResearcherDID.Researcher",
-            "id": 247,
+            "id": 259,
             "members": [
               {
                 "constant": false,
-                "id": 236,
+                "id": 248,
                 "mutability": "mutable",
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "266:11:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6653,7 +6652,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 235,
+                  "id": 247,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "266:6:1",
@@ -6666,11 +6665,11 @@
               },
               {
                 "constant": false,
-                "id": 238,
+                "id": 250,
                 "mutability": "mutable",
                 "name": "institution",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "287:18:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6679,7 +6678,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 237,
+                  "id": 249,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "287:6:1",
@@ -6692,11 +6691,11 @@
               },
               {
                 "constant": false,
-                "id": 240,
+                "id": 252,
                 "mutability": "mutable",
                 "name": "fieldOfStudy",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "315:19:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6705,7 +6704,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 239,
+                  "id": 251,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "315:6:1",
@@ -6718,11 +6717,11 @@
               },
               {
                 "constant": false,
-                "id": 242,
+                "id": 254,
                 "mutability": "mutable",
                 "name": "walletAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "344:21:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6731,7 +6730,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 241,
+                  "id": 253,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "344:7:1",
@@ -6745,11 +6744,11 @@
               },
               {
                 "constant": false,
-                "id": 244,
+                "id": 256,
                 "mutability": "mutable",
                 "name": "registrationDate",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "375:24:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6758,7 +6757,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 243,
+                  "id": 255,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "375:7:1",
@@ -6771,11 +6770,11 @@
               },
               {
                 "constant": false,
-                "id": 246,
+                "id": 258,
                 "mutability": "mutable",
                 "name": "isVerified",
                 "nodeType": "VariableDeclaration",
-                "scope": 247,
+                "scope": 259,
                 "src": "409:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -6784,7 +6783,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 245,
+                  "id": 257,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "409:4:1",
@@ -6798,28 +6797,28 @@
             ],
             "name": "Researcher",
             "nodeType": "StructDefinition",
-            "scope": 493,
+            "scope": 505,
             "src": "238:193:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 252,
+            "id": 264,
             "mutability": "mutable",
             "name": "researchers",
             "nodeType": "VariableDeclaration",
-            "scope": 493,
+            "scope": 505,
             "src": "503:49:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
               "typeString": "mapping(string => struct ResearcherDID.Researcher)"
             },
             "typeName": {
-              "id": 251,
+              "id": 263,
               "keyType": {
-                "id": 248,
+                "id": 260,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "511:6:1",
@@ -6831,23 +6830,23 @@
               "nodeType": "Mapping",
               "src": "503:29:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                 "typeString": "mapping(string => struct ResearcherDID.Researcher)"
               },
               "valueType": {
-                "id": 250,
+                "id": 262,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 249,
+                  "id": 261,
                   "name": "Researcher",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 247,
+                  "referencedDeclaration": 259,
                   "src": "521:10:1"
                 },
-                "referencedDeclaration": 247,
+                "referencedDeclaration": 259,
                 "src": "521:10:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Researcher_$247_storage_ptr",
+                  "typeIdentifier": "t_struct$_Researcher_$259_storage_ptr",
                   "typeString": "struct ResearcherDID.Researcher"
                 }
               }
@@ -6856,21 +6855,21 @@
           },
           {
             "anonymous": false,
-            "id": 260,
+            "id": 272,
             "name": "ResearcherRegistered",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 259,
+              "id": 271,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 254,
+                  "id": 266,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 260,
+                  "scope": 272,
                   "src": "600:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6879,7 +6878,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 253,
+                    "id": 265,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "600:6:1",
@@ -6892,12 +6891,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 256,
+                  "id": 268,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "walletAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 260,
+                  "scope": 272,
                   "src": "620:29:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6906,7 +6905,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 255,
+                    "id": 267,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "620:7:1",
@@ -6920,12 +6919,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 258,
+                  "id": 270,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 260,
+                  "scope": 272,
                   "src": "651:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6934,7 +6933,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 257,
+                    "id": 269,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "651:6:1",
@@ -6952,21 +6951,21 @@
           },
           {
             "anonymous": false,
-            "id": 266,
+            "id": 278,
             "name": "ResearcherVerified",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 265,
+              "id": 277,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 262,
+                  "id": 274,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 266,
+                  "scope": 278,
                   "src": "694:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -6975,7 +6974,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 261,
+                    "id": 273,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "694:6:1",
@@ -6988,12 +6987,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 264,
+                  "id": 276,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "isVerified",
                   "nodeType": "VariableDeclaration",
-                  "scope": 266,
+                  "scope": 278,
                   "src": "714:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7002,7 +7001,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 263,
+                    "id": 275,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "714:4:1",
@@ -7020,21 +7019,21 @@
           },
           {
             "anonymous": false,
-            "id": 276,
+            "id": 288,
             "name": "ResearcherUpdated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 275,
+              "id": 287,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 268,
+                  "id": 280,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 288,
                   "src": "760:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7043,7 +7042,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 267,
+                    "id": 279,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "760:6:1",
@@ -7056,12 +7055,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 270,
+                  "id": 282,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 288,
                   "src": "780:11:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7070,7 +7069,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 269,
+                    "id": 281,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "780:6:1",
@@ -7083,12 +7082,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 272,
+                  "id": 284,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "institution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 288,
                   "src": "793:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7097,7 +7096,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 271,
+                    "id": 283,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "793:6:1",
@@ -7110,12 +7109,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 274,
+                  "id": 286,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "fieldOfStudy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 276,
+                  "scope": 288,
                   "src": "813:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7124,7 +7123,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 273,
+                    "id": 285,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "813:6:1",
@@ -7142,7 +7141,7 @@
           },
           {
             "body": {
-              "id": 295,
+              "id": 307,
               "nodeType": "Block",
               "src": "1020:111:1",
               "statements": [
@@ -7154,7 +7153,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 290,
+                        "id": 302,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7162,24 +7161,24 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 282,
+                              "id": 294,
                               "name": "researchers",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 252,
+                              "referencedDeclaration": 264,
                               "src": "1038:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                                 "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                               }
                             },
-                            "id": 284,
+                            "id": 296,
                             "indexExpression": {
-                              "id": 283,
+                              "id": 295,
                               "name": "_did",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 279,
+                              "referencedDeclaration": 291,
                               "src": "1050:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -7193,18 +7192,18 @@
                             "nodeType": "IndexAccess",
                             "src": "1038:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                              "typeIdentifier": "t_struct$_Researcher_$259_storage",
                               "typeString": "struct ResearcherDID.Researcher storage ref"
                             }
                           },
-                          "id": 285,
+                          "id": 297,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "walletAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 242,
+                          "referencedDeclaration": 254,
                           "src": "1038:31:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -7217,7 +7216,7 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 288,
+                              "id": 300,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -7239,7 +7238,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 287,
+                            "id": 299,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -7251,14 +7250,14 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 286,
+                              "id": 298,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "1073:7:1",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 289,
+                          "id": 301,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -7281,7 +7280,7 @@
                       },
                       {
                         "hexValue": "52657365617263686572206e6f742072656769737465726564",
-                        "id": 291,
+                        "id": 303,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7307,7 +7306,7 @@
                           "typeString": "literal_string \"Researcher not registered\""
                         }
                       ],
-                      "id": 281,
+                      "id": 293,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -7321,7 +7320,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 292,
+                    "id": 304,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7336,37 +7335,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 293,
+                  "id": 305,
                   "nodeType": "ExpressionStatement",
                   "src": "1030:83:1"
                 },
                 {
-                  "id": 294,
+                  "id": 306,
                   "nodeType": "PlaceholderStatement",
                   "src": "1123:1:1"
                 }
               ]
             },
             "documentation": {
-              "id": 277,
+              "id": 289,
               "nodeType": "StructuredDocumentation",
               "src": "840:131:1",
               "text": "@dev Modifier to ensure only registered researchers can perform certain actions.\n @param _did The DID of the researcher."
             },
-            "id": 296,
+            "id": 308,
             "name": "onlyRegistered",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 280,
+              "id": 292,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 279,
+                  "id": 291,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 296,
+                  "scope": 308,
                   "src": "1000:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -7375,7 +7374,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 278,
+                    "id": 290,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1000:6:1",
@@ -7395,7 +7394,7 @@
           },
           {
             "body": {
-              "id": 310,
+              "id": 322,
               "nodeType": "Block",
               "src": "1313:92:1",
               "statements": [
@@ -7405,24 +7404,24 @@
                       {
                         "expression": {
                           "baseExpression": {
-                            "id": 302,
+                            "id": 314,
                             "name": "researchers",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 252,
+                            "referencedDeclaration": 264,
                             "src": "1331:11:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                               "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                             }
                           },
-                          "id": 304,
+                          "id": 316,
                           "indexExpression": {
-                            "id": 303,
+                            "id": 315,
                             "name": "_did",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 299,
+                            "referencedDeclaration": 311,
                             "src": "1343:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -7436,18 +7435,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1331:17:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                            "typeIdentifier": "t_struct$_Researcher_$259_storage",
                             "typeString": "struct ResearcherDID.Researcher storage ref"
                           }
                         },
-                        "id": 305,
+                        "id": 317,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isVerified",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 246,
+                        "referencedDeclaration": 258,
                         "src": "1331:28:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -7456,7 +7455,7 @@
                       },
                       {
                         "hexValue": "52657365617263686572206e6f74207665726966696564",
-                        "id": 306,
+                        "id": 318,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7482,7 +7481,7 @@
                           "typeString": "literal_string \"Researcher not verified\""
                         }
                       ],
-                      "id": 301,
+                      "id": 313,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -7496,7 +7495,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 307,
+                    "id": 319,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7511,37 +7510,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 308,
+                  "id": 320,
                   "nodeType": "ExpressionStatement",
                   "src": "1323:64:1"
                 },
                 {
-                  "id": 309,
+                  "id": 321,
                   "nodeType": "PlaceholderStatement",
                   "src": "1397:1:1"
                 }
               ]
             },
             "documentation": {
-              "id": 297,
+              "id": 309,
               "nodeType": "StructuredDocumentation",
               "src": "1137:129:1",
               "text": "@dev Modifier to ensure only verified researchers can perform certain actions.\n @param _did The DID of the researcher."
             },
-            "id": 311,
+            "id": 323,
             "name": "onlyVerified",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 300,
+              "id": 312,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 299,
+                  "id": 311,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 311,
+                  "scope": 323,
                   "src": "1293:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -7550,7 +7549,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 298,
+                    "id": 310,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1293:6:1",
@@ -7570,7 +7569,7 @@
           },
           {
             "body": {
-              "id": 358,
+              "id": 370,
               "nodeType": "Block",
               "src": "1943:485:1",
               "statements": [
@@ -7582,7 +7581,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 332,
+                        "id": 344,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7590,24 +7589,24 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 324,
+                              "id": 336,
                               "name": "researchers",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 252,
+                              "referencedDeclaration": 264,
                               "src": "1961:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                                 "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                               }
                             },
-                            "id": 326,
+                            "id": 338,
                             "indexExpression": {
-                              "id": 325,
+                              "id": 337,
                               "name": "_did",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 314,
+                              "referencedDeclaration": 326,
                               "src": "1973:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -7621,18 +7620,18 @@
                             "nodeType": "IndexAccess",
                             "src": "1961:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                              "typeIdentifier": "t_struct$_Researcher_$259_storage",
                               "typeString": "struct ResearcherDID.Researcher storage ref"
                             }
                           },
-                          "id": 327,
+                          "id": 339,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "walletAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 242,
+                          "referencedDeclaration": 254,
                           "src": "1961:31:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -7645,7 +7644,7 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 330,
+                              "id": 342,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -7667,7 +7666,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 329,
+                            "id": 341,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -7679,14 +7678,14 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 328,
+                              "id": 340,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "1996:7:1",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 331,
+                          "id": 343,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -7709,7 +7708,7 @@
                       },
                       {
                         "hexValue": "5265736561726368657220616c72656164792072656769737465726564",
-                        "id": 333,
+                        "id": 345,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7735,7 +7734,7 @@
                           "typeString": "literal_string \"Researcher already registered\""
                         }
                       ],
-                      "id": 323,
+                      "id": 335,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -7749,7 +7748,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 334,
+                    "id": 346,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7764,37 +7763,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 335,
+                  "id": 347,
                   "nodeType": "ExpressionStatement",
                   "src": "1953:87:1"
                 },
                 {
                   "expression": {
-                    "id": 349,
+                    "id": 361,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 336,
+                        "id": 348,
                         "name": "researchers",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 252,
+                        "referencedDeclaration": 264,
                         "src": "2096:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                           "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                         }
                       },
-                      "id": 338,
+                      "id": 350,
                       "indexExpression": {
-                        "id": 337,
+                        "id": 349,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 314,
+                        "referencedDeclaration": 326,
                         "src": "2108:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7808,7 +7807,7 @@
                       "nodeType": "IndexAccess",
                       "src": "2096:17:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                        "typeIdentifier": "t_struct$_Researcher_$259_storage",
                         "typeString": "struct ResearcherDID.Researcher storage ref"
                       }
                     },
@@ -7817,11 +7816,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 340,
+                          "id": 352,
                           "name": "_name",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 316,
+                          "referencedDeclaration": 328,
                           "src": "2147:5:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -7829,11 +7828,11 @@
                           }
                         },
                         {
-                          "id": 341,
+                          "id": 353,
                           "name": "_institution",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 318,
+                          "referencedDeclaration": 330,
                           "src": "2179:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -7841,11 +7840,11 @@
                           }
                         },
                         {
-                          "id": 342,
+                          "id": 354,
                           "name": "_fieldOfStudy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 332,
                           "src": "2219:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -7854,7 +7853,7 @@
                         },
                         {
                           "expression": {
-                            "id": 343,
+                            "id": 355,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -7865,7 +7864,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 344,
+                          "id": 356,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7880,7 +7879,7 @@
                         },
                         {
                           "expression": {
-                            "id": 345,
+                            "id": 357,
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -7891,7 +7890,7 @@
                               "typeString": "block"
                             }
                           },
-                          "id": 346,
+                          "id": 358,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7906,7 +7905,7 @@
                         },
                         {
                           "hexValue": "66616c7365",
-                          "id": 347,
+                          "id": 359,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -7948,18 +7947,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 339,
+                        "id": 351,
                         "name": "Researcher",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 247,
+                        "referencedDeclaration": 259,
                         "src": "2116:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_Researcher_$247_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_Researcher_$259_storage_ptr_$",
                           "typeString": "type(struct ResearcherDID.Researcher storage pointer)"
                         }
                       },
-                      "id": 348,
+                      "id": 360,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7977,17 +7976,17 @@
                       "src": "2116:244:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                        "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                         "typeString": "struct ResearcherDID.Researcher memory"
                       }
                     },
                     "src": "2096:264:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                      "typeIdentifier": "t_struct$_Researcher_$259_storage",
                       "typeString": "struct ResearcherDID.Researcher storage ref"
                     }
                   },
-                  "id": 350,
+                  "id": 362,
                   "nodeType": "ExpressionStatement",
                   "src": "2096:264:1"
                 },
@@ -7995,11 +7994,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 352,
+                        "id": 364,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 314,
+                        "referencedDeclaration": 326,
                         "src": "2397:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8008,7 +8007,7 @@
                       },
                       {
                         "expression": {
-                          "id": 353,
+                          "id": 365,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -8019,7 +8018,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 354,
+                        "id": 366,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8033,11 +8032,11 @@
                         }
                       },
                       {
-                        "id": 355,
+                        "id": 367,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 316,
+                        "referencedDeclaration": 328,
                         "src": "2415:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8060,18 +8059,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 351,
+                      "id": 363,
                       "name": "ResearcherRegistered",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 260,
+                      "referencedDeclaration": 272,
                       "src": "2376:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_address_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory,address,string memory)"
                       }
                     },
-                    "id": 356,
+                    "id": 368,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8086,36 +8085,36 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 357,
+                  "id": 369,
                   "nodeType": "EmitStatement",
                   "src": "2371:50:1"
                 }
               ]
             },
             "documentation": {
-              "id": 312,
+              "id": 324,
               "nodeType": "StructuredDocumentation",
               "src": "1411:356:1",
               "text": "@notice Register a new researcher with their DID, name, and wallet address.\n @param _did The unique decentralized identifier (DID) for the researcher.\n @param _name The name of the researcher.\n @param _institution The institution or affiliation of the researcher.\n @param _fieldOfStudy The field of study for the researcher."
             },
             "functionSelector": "5e598974",
-            "id": 359,
+            "id": 371,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "registerResearcher",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 321,
+              "id": 333,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 314,
+                  "id": 326,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 359,
+                  "scope": 371,
                   "src": "1809:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8124,7 +8123,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 313,
+                    "id": 325,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1809:6:1",
@@ -8137,11 +8136,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 316,
+                  "id": 328,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 359,
+                  "scope": 371,
                   "src": "1837:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8150,7 +8149,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 315,
+                    "id": 327,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1837:6:1",
@@ -8163,11 +8162,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 318,
+                  "id": 330,
                   "mutability": "mutable",
                   "name": "_institution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 359,
+                  "scope": 371,
                   "src": "1866:26:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8176,7 +8175,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 317,
+                    "id": 329,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1866:6:1",
@@ -8189,11 +8188,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 320,
+                  "id": 332,
                   "mutability": "mutable",
                   "name": "_fieldOfStudy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 359,
+                  "scope": 371,
                   "src": "1902:27:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8202,7 +8201,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 319,
+                    "id": 331,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1902:6:1",
@@ -8217,12 +8216,12 @@
               "src": "1799:136:1"
             },
             "returnParameters": {
-              "id": 322,
+              "id": 334,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1943:0:1"
             },
-            "scope": 493,
+            "scope": 505,
             "src": "1772:656:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -8230,13 +8229,13 @@
           },
           {
             "body": {
-              "id": 380,
+              "id": 392,
               "nodeType": "Block",
               "src": "2691:97:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 373,
+                    "id": 385,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8244,24 +8243,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 368,
+                          "id": 380,
                           "name": "researchers",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 252,
+                          "referencedDeclaration": 264,
                           "src": "2701:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                             "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                           }
                         },
-                        "id": 370,
+                        "id": 382,
                         "indexExpression": {
-                          "id": 369,
+                          "id": 381,
                           "name": "_did",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 362,
+                          "referencedDeclaration": 374,
                           "src": "2713:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -8275,18 +8274,18 @@
                         "nodeType": "IndexAccess",
                         "src": "2701:17:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                          "typeIdentifier": "t_struct$_Researcher_$259_storage",
                           "typeString": "struct ResearcherDID.Researcher storage ref"
                         }
                       },
-                      "id": 371,
+                      "id": 383,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isVerified",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 246,
+                      "referencedDeclaration": 258,
                       "src": "2701:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -8297,7 +8296,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "74727565",
-                      "id": 372,
+                      "id": 384,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -8317,7 +8316,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 374,
+                  "id": 386,
                   "nodeType": "ExpressionStatement",
                   "src": "2701:35:1"
                 },
@@ -8325,11 +8324,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 376,
+                        "id": 388,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 362,
+                        "referencedDeclaration": 374,
                         "src": "2770:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8338,7 +8337,7 @@
                       },
                       {
                         "hexValue": "74727565",
-                        "id": 377,
+                        "id": 389,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8364,18 +8363,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 375,
+                      "id": 387,
                       "name": "ResearcherVerified",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 266,
+                      "referencedDeclaration": 278,
                       "src": "2751:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_bool_$returns$__$",
                         "typeString": "function (string memory,bool)"
                       }
                     },
-                    "id": 378,
+                    "id": 390,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8390,31 +8389,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 379,
+                  "id": 391,
                   "nodeType": "EmitStatement",
                   "src": "2746:35:1"
                 }
               ]
             },
             "documentation": {
-              "id": 360,
+              "id": 372,
               "nodeType": "StructuredDocumentation",
               "src": "2434:178:1",
               "text": "@notice Verify a researcher.\n @dev This function can be restricted to admin-only in a complete implementation.\n @param _did The DID of the researcher to verify."
             },
             "functionSelector": "e4ba0566",
-            "id": 381,
+            "id": 393,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 365,
+                    "id": 377,
                     "name": "_did",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 362,
+                    "referencedDeclaration": 374,
                     "src": "2685:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
@@ -8422,12 +8421,12 @@
                     }
                   }
                 ],
-                "id": 366,
+                "id": 378,
                 "modifierName": {
-                  "id": 364,
+                  "id": 376,
                   "name": "onlyRegistered",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 296,
+                  "referencedDeclaration": 308,
                   "src": "2670:14:1"
                 },
                 "nodeType": "ModifierInvocation",
@@ -8437,16 +8436,16 @@
             "name": "verifyResearcher",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 363,
+              "id": 375,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 362,
+                  "id": 374,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 381,
+                  "scope": 393,
                   "src": "2643:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -8455,7 +8454,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 361,
+                    "id": 373,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2643:6:1",
@@ -8470,12 +8469,12 @@
               "src": "2642:20:1"
             },
             "returnParameters": {
-              "id": 367,
+              "id": 379,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2691:0:1"
             },
-            "scope": 493,
+            "scope": 505,
             "src": "2617:171:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -8483,7 +8482,7 @@
           },
           {
             "body": {
-              "id": 438,
+              "id": 450,
               "nodeType": "Block",
               "src": "3305:383:1",
               "statements": [
@@ -8495,7 +8494,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 406,
+                        "id": 418,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8503,24 +8502,24 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 400,
+                              "id": 412,
                               "name": "researchers",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 252,
+                              "referencedDeclaration": 264,
                               "src": "3323:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                                 "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                               }
                             },
-                            "id": 402,
+                            "id": 414,
                             "indexExpression": {
-                              "id": 401,
+                              "id": 413,
                               "name": "_did",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 384,
+                              "referencedDeclaration": 396,
                               "src": "3335:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -8534,18 +8533,18 @@
                             "nodeType": "IndexAccess",
                             "src": "3323:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                              "typeIdentifier": "t_struct$_Researcher_$259_storage",
                               "typeString": "struct ResearcherDID.Researcher storage ref"
                             }
                           },
-                          "id": 403,
+                          "id": 415,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "walletAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 242,
+                          "referencedDeclaration": 254,
                           "src": "3323:31:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -8556,7 +8555,7 @@
                         "operator": "==",
                         "rightExpression": {
                           "expression": {
-                            "id": 404,
+                            "id": 416,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -8567,7 +8566,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 405,
+                          "id": 417,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8588,7 +8587,7 @@
                       },
                       {
                         "hexValue": "4f6e6c792074686520726573656172636865722063616e2075706461746520746865697220696e666f",
-                        "id": 407,
+                        "id": 419,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8614,7 +8613,7 @@
                           "typeString": "literal_string \"Only the researcher can update their info\""
                         }
                       ],
-                      "id": 399,
+                      "id": 411,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -8628,7 +8627,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 408,
+                    "id": 420,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8643,13 +8642,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 409,
+                  "id": 421,
                   "nodeType": "ExpressionStatement",
                   "src": "3315:99:1"
                 },
                 {
                   "expression": {
-                    "id": 415,
+                    "id": 427,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8657,24 +8656,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 410,
+                          "id": 422,
                           "name": "researchers",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 252,
+                          "referencedDeclaration": 264,
                           "src": "3466:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                             "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                           }
                         },
-                        "id": 412,
+                        "id": 424,
                         "indexExpression": {
-                          "id": 411,
+                          "id": 423,
                           "name": "_did",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 384,
+                          "referencedDeclaration": 396,
                           "src": "3478:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -8688,18 +8687,18 @@
                         "nodeType": "IndexAccess",
                         "src": "3466:17:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                          "typeIdentifier": "t_struct$_Researcher_$259_storage",
                           "typeString": "struct ResearcherDID.Researcher storage ref"
                         }
                       },
-                      "id": 413,
+                      "id": 425,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "name",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 236,
+                      "referencedDeclaration": 248,
                       "src": "3466:22:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -8709,11 +8708,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 414,
+                      "id": 426,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 386,
+                      "referencedDeclaration": 398,
                       "src": "3491:5:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -8726,13 +8725,13 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 416,
+                  "id": 428,
                   "nodeType": "ExpressionStatement",
                   "src": "3466:30:1"
                 },
                 {
                   "expression": {
-                    "id": 422,
+                    "id": 434,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8740,24 +8739,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 417,
+                          "id": 429,
                           "name": "researchers",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 252,
+                          "referencedDeclaration": 264,
                           "src": "3506:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                             "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                           }
                         },
-                        "id": 419,
+                        "id": 431,
                         "indexExpression": {
-                          "id": 418,
+                          "id": 430,
                           "name": "_did",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 384,
+                          "referencedDeclaration": 396,
                           "src": "3518:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -8771,18 +8770,18 @@
                         "nodeType": "IndexAccess",
                         "src": "3506:17:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                          "typeIdentifier": "t_struct$_Researcher_$259_storage",
                           "typeString": "struct ResearcherDID.Researcher storage ref"
                         }
                       },
-                      "id": 420,
+                      "id": 432,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "institution",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 238,
+                      "referencedDeclaration": 250,
                       "src": "3506:29:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -8792,11 +8791,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 421,
+                      "id": 433,
                       "name": "_institution",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 388,
+                      "referencedDeclaration": 400,
                       "src": "3538:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -8809,13 +8808,13 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 423,
+                  "id": 435,
                   "nodeType": "ExpressionStatement",
                   "src": "3506:44:1"
                 },
                 {
                   "expression": {
-                    "id": 429,
+                    "id": 441,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8823,24 +8822,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 424,
+                          "id": 436,
                           "name": "researchers",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 252,
+                          "referencedDeclaration": 264,
                           "src": "3560:11:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                             "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                           }
                         },
-                        "id": 426,
+                        "id": 438,
                         "indexExpression": {
-                          "id": 425,
+                          "id": 437,
                           "name": "_did",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 384,
+                          "referencedDeclaration": 396,
                           "src": "3572:4:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
@@ -8854,18 +8853,18 @@
                         "nodeType": "IndexAccess",
                         "src": "3560:17:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                          "typeIdentifier": "t_struct$_Researcher_$259_storage",
                           "typeString": "struct ResearcherDID.Researcher storage ref"
                         }
                       },
-                      "id": 427,
+                      "id": 439,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "fieldOfStudy",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 240,
+                      "referencedDeclaration": 252,
                       "src": "3560:30:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -8875,11 +8874,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 428,
+                      "id": 440,
                       "name": "_fieldOfStudy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 390,
+                      "referencedDeclaration": 402,
                       "src": "3593:13:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -8892,7 +8891,7 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 430,
+                  "id": 442,
                   "nodeType": "ExpressionStatement",
                   "src": "3560:46:1"
                 },
@@ -8900,11 +8899,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 432,
+                        "id": 444,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 384,
+                        "referencedDeclaration": 396,
                         "src": "3640:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8912,11 +8911,11 @@
                         }
                       },
                       {
-                        "id": 433,
+                        "id": 445,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 386,
+                        "referencedDeclaration": 398,
                         "src": "3646:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8924,11 +8923,11 @@
                         }
                       },
                       {
-                        "id": 434,
+                        "id": 446,
                         "name": "_institution",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 388,
+                        "referencedDeclaration": 400,
                         "src": "3653:12:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8936,11 +8935,11 @@
                         }
                       },
                       {
-                        "id": 435,
+                        "id": 447,
                         "name": "_fieldOfStudy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 390,
+                        "referencedDeclaration": 402,
                         "src": "3667:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8967,18 +8966,18 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 431,
+                      "id": 443,
                       "name": "ResearcherUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 276,
+                      "referencedDeclaration": 288,
                       "src": "3622:17:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory,string memory,string memory,string memory)"
                       }
                     },
-                    "id": 436,
+                    "id": 448,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8993,31 +8992,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 437,
+                  "id": 449,
                   "nodeType": "EmitStatement",
                   "src": "3617:64:1"
                 }
               ]
             },
             "documentation": {
-              "id": 382,
+              "id": 394,
               "nodeType": "StructuredDocumentation",
               "src": "2794:293:1",
               "text": "@notice Update a researcher's profile information.\n @param _did The DID of the researcher to update.\n @param _name The updated name of the researcher.\n @param _institution The updated institution or affiliation.\n @param _fieldOfStudy The updated field of study."
             },
             "functionSelector": "54c53eff",
-            "id": 439,
+            "id": 451,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 393,
+                    "id": 405,
                     "name": "_did",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 384,
+                    "referencedDeclaration": 396,
                     "src": "3280:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
@@ -9025,12 +9024,12 @@
                     }
                   }
                 ],
-                "id": 394,
+                "id": 406,
                 "modifierName": {
-                  "id": 392,
+                  "id": 404,
                   "name": "onlyRegistered",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 296,
+                  "referencedDeclaration": 308,
                   "src": "3265:14:1"
                 },
                 "nodeType": "ModifierInvocation",
@@ -9039,11 +9038,11 @@
               {
                 "arguments": [
                   {
-                    "id": 396,
+                    "id": 408,
                     "name": "_did",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 384,
+                    "referencedDeclaration": 396,
                     "src": "3299:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
@@ -9051,12 +9050,12 @@
                     }
                   }
                 ],
-                "id": 397,
+                "id": 409,
                 "modifierName": {
-                  "id": 395,
+                  "id": 407,
                   "name": "onlyVerified",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 311,
+                  "referencedDeclaration": 323,
                   "src": "3286:12:1"
                 },
                 "nodeType": "ModifierInvocation",
@@ -9066,16 +9065,16 @@
             "name": "updateResearcherInfo",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 391,
+              "id": 403,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 384,
+                  "id": 396,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 439,
+                  "scope": 451,
                   "src": "3131:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9084,7 +9083,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 383,
+                    "id": 395,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3131:6:1",
@@ -9097,11 +9096,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 386,
+                  "id": 398,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 439,
+                  "scope": 451,
                   "src": "3159:19:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9110,7 +9109,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 385,
+                    "id": 397,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3159:6:1",
@@ -9123,11 +9122,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 388,
+                  "id": 400,
                   "mutability": "mutable",
                   "name": "_institution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 439,
+                  "scope": 451,
                   "src": "3188:26:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9136,7 +9135,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 387,
+                    "id": 399,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3188:6:1",
@@ -9149,11 +9148,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 390,
+                  "id": 402,
                   "mutability": "mutable",
                   "name": "_fieldOfStudy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 439,
+                  "scope": 451,
                   "src": "3224:27:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9162,7 +9161,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 389,
+                    "id": 401,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "3224:6:1",
@@ -9177,12 +9176,12 @@
               "src": "3121:136:1"
             },
             "returnParameters": {
-              "id": 398,
+              "id": 410,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3305:0:1"
             },
-            "scope": 493,
+            "scope": 505,
             "src": "3092:596:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -9190,7 +9189,7 @@
           },
           {
             "body": {
-              "id": 491,
+              "id": 503,
               "nodeType": "Block",
               "src": "4464:397:1",
               "statements": [
@@ -9202,7 +9201,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 466,
+                        "id": 478,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9210,24 +9209,24 @@
                         "leftExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 458,
+                              "id": 470,
                               "name": "researchers",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 252,
+                              "referencedDeclaration": 264,
                               "src": "4482:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                                 "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                               }
                             },
-                            "id": 460,
+                            "id": 472,
                             "indexExpression": {
-                              "id": 459,
+                              "id": 471,
                               "name": "_did",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 442,
+                              "referencedDeclaration": 454,
                               "src": "4494:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -9241,18 +9240,18 @@
                             "nodeType": "IndexAccess",
                             "src": "4482:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                              "typeIdentifier": "t_struct$_Researcher_$259_storage",
                               "typeString": "struct ResearcherDID.Researcher storage ref"
                             }
                           },
-                          "id": 461,
+                          "id": 473,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "walletAddress",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 242,
+                          "referencedDeclaration": 254,
                           "src": "4482:31:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -9265,7 +9264,7 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 464,
+                              "id": 476,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -9287,7 +9286,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 463,
+                            "id": 475,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -9299,14 +9298,14 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 462,
+                              "id": 474,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "4517:7:1",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 465,
+                          "id": 477,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -9329,7 +9328,7 @@
                       },
                       {
                         "hexValue": "52657365617263686572206e6f7420666f756e64",
-                        "id": 467,
+                        "id": 479,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -9355,7 +9354,7 @@
                           "typeString": "literal_string \"Researcher not found\""
                         }
                       ],
-                      "id": 457,
+                      "id": 469,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -9369,7 +9368,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 468,
+                    "id": 480,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9384,70 +9383,70 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 469,
+                  "id": 481,
                   "nodeType": "ExpressionStatement",
                   "src": "4474:78:1"
                 },
                 {
                   "assignments": [
-                    472
+                    484
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 472,
+                      "id": 484,
                       "mutability": "mutable",
                       "name": "researcher",
                       "nodeType": "VariableDeclaration",
-                      "scope": 491,
+                      "scope": 503,
                       "src": "4563:28:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                        "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                         "typeString": "struct ResearcherDID.Researcher"
                       },
                       "typeName": {
-                        "id": 471,
+                        "id": 483,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 470,
+                          "id": 482,
                           "name": "Researcher",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 247,
+                          "referencedDeclaration": 259,
                           "src": "4563:10:1"
                         },
-                        "referencedDeclaration": 247,
+                        "referencedDeclaration": 259,
                         "src": "4563:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Researcher_$247_storage_ptr",
+                          "typeIdentifier": "t_struct$_Researcher_$259_storage_ptr",
                           "typeString": "struct ResearcherDID.Researcher"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 476,
+                  "id": 488,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 473,
+                      "id": 485,
                       "name": "researchers",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 252,
+                      "referencedDeclaration": 264,
                       "src": "4594:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$247_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Researcher_$259_storage_$",
                         "typeString": "mapping(string memory => struct ResearcherDID.Researcher storage ref)"
                       }
                     },
-                    "id": 475,
+                    "id": 487,
                     "indexExpression": {
-                      "id": 474,
+                      "id": 486,
                       "name": "_did",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 442,
+                      "referencedDeclaration": 454,
                       "src": "4606:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -9461,7 +9460,7 @@
                     "nodeType": "IndexAccess",
                     "src": "4594:17:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Researcher_$247_storage",
+                      "typeIdentifier": "t_struct$_Researcher_$259_storage",
                       "typeString": "struct ResearcherDID.Researcher storage ref"
                     }
                   },
@@ -9473,25 +9472,25 @@
                     "components": [
                       {
                         "expression": {
-                          "id": 477,
+                          "id": 489,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4642:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 478,
+                        "id": 490,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 236,
+                        "referencedDeclaration": 248,
                         "src": "4642:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9500,25 +9499,25 @@
                       },
                       {
                         "expression": {
-                          "id": 479,
+                          "id": 491,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4671:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 480,
+                        "id": 492,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "institution",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 238,
+                        "referencedDeclaration": 250,
                         "src": "4671:22:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9527,25 +9526,25 @@
                       },
                       {
                         "expression": {
-                          "id": 481,
+                          "id": 493,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4707:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 482,
+                        "id": 494,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "fieldOfStudy",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 240,
+                        "referencedDeclaration": 252,
                         "src": "4707:23:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9554,25 +9553,25 @@
                       },
                       {
                         "expression": {
-                          "id": 483,
+                          "id": 495,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4744:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 484,
+                        "id": 496,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "walletAddress",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 242,
+                        "referencedDeclaration": 254,
                         "src": "4744:24:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -9581,25 +9580,25 @@
                       },
                       {
                         "expression": {
-                          "id": 485,
+                          "id": 497,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4782:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 486,
+                        "id": 498,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "registrationDate",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 244,
+                        "referencedDeclaration": 256,
                         "src": "4782:27:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9608,25 +9607,25 @@
                       },
                       {
                         "expression": {
-                          "id": 487,
+                          "id": 499,
                           "name": "researcher",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 472,
+                          "referencedDeclaration": 484,
                           "src": "4823:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Researcher_$247_memory_ptr",
+                            "typeIdentifier": "t_struct$_Researcher_$259_memory_ptr",
                             "typeString": "struct ResearcherDID.Researcher memory"
                           }
                         },
-                        "id": 488,
+                        "id": 500,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "isVerified",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 246,
+                        "referencedDeclaration": 258,
                         "src": "4823:21:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -9634,7 +9633,7 @@
                         }
                       }
                     ],
-                    "id": 489,
+                    "id": 501,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -9647,37 +9646,37 @@
                       "typeString": "tuple(string memory,string memory,string memory,address,uint256,bool)"
                     }
                   },
-                  "functionReturnParameters": 456,
-                  "id": 490,
+                  "functionReturnParameters": 468,
+                  "id": 502,
                   "nodeType": "Return",
                   "src": "4621:233:1"
                 }
               ]
             },
             "documentation": {
-              "id": 440,
+              "id": 452,
               "nodeType": "StructuredDocumentation",
               "src": "3694:506:1",
               "text": "@notice Retrieve researcher details.\n @param _did The DID of the researcher to retrieve.\n @return name The name of the researcher.\n @return institution The institution or affiliation of the researcher.\n @return fieldOfStudy The field of study for the researcher.\n @return walletAddress The wallet address of the researcher.\n @return registrationDate The registration date of the researcher.\n @return isVerified The verification status of the researcher."
             },
             "functionSelector": "5c0b8e63",
-            "id": 492,
+            "id": 504,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getResearcher",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 443,
+              "id": 455,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 442,
+                  "id": 454,
                   "mutability": "mutable",
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4228:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9686,7 +9685,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 441,
+                    "id": 453,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "4228:6:1",
@@ -9701,16 +9700,16 @@
               "src": "4227:20:1"
             },
             "returnParameters": {
-              "id": 456,
+              "id": 468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 445,
+                  "id": 457,
                   "mutability": "mutable",
                   "name": "name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4278:18:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9719,7 +9718,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 444,
+                    "id": 456,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "4278:6:1",
@@ -9732,11 +9731,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 447,
+                  "id": 459,
                   "mutability": "mutable",
                   "name": "institution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4306:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9745,7 +9744,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 446,
+                    "id": 458,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "4306:6:1",
@@ -9758,11 +9757,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 449,
+                  "id": 461,
                   "mutability": "mutable",
                   "name": "fieldOfStudy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4341:26:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9771,7 +9770,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 448,
+                    "id": 460,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "4341:6:1",
@@ -9784,11 +9783,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 451,
+                  "id": 463,
                   "mutability": "mutable",
                   "name": "walletAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4377:21:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9797,7 +9796,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 450,
+                    "id": 462,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "4377:7:1",
@@ -9811,11 +9810,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 453,
+                  "id": 465,
                   "mutability": "mutable",
                   "name": "registrationDate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4408:24:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9824,7 +9823,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 452,
+                    "id": 464,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "4408:7:1",
@@ -9837,11 +9836,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 455,
+                  "id": 467,
                   "mutability": "mutable",
                   "name": "isVerified",
                   "nodeType": "VariableDeclaration",
-                  "scope": 492,
+                  "scope": 504,
                   "src": "4442:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9850,7 +9849,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 454,
+                    "id": 466,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "4442:4:1",
@@ -9864,14 +9863,14 @@
               ],
               "src": "4268:195:1"
             },
-            "scope": 493,
+            "scope": 505,
             "src": "4205:656:1",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 494,
+        "scope": 506,
         "src": "151:4712:1"
       }
     ],
@@ -9890,8 +9889,7 @@
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-11-18T18:37:50.221Z",
-  "networkType": "ethereum",
+  "updatedAt": "2024-11-18T19:08:44.499Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
