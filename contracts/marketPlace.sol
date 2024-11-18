@@ -57,5 +57,10 @@ contract CitationReward {
         emit RewardDistributed(researcherWallet, REWARD_AMOUNT);
     }
 
+    // This function returns the contract's balance
+    function getContractBalance() public view returns (uint) {
+        return address(this).balance;
+    }
+
     receive() external payable {}  // Fallback to accept funding for rewards
 }

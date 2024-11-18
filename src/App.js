@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
-import CitationReward from "./contracts/CitationReward.json";
-import ResearcherDID from "./contracts/ResearcherDID.json";
+import CitationReward from "./build/contracts/CitationReward.json";
+import ResearcherDID from "./build/contracts/ResearcherDID.json";
 import RegisterResearcher from "./components/RegisterResearcher";
 import AddCitation from "./components/AddCitation";
 import WithdrawRewards from "./components/WithdrawRewards";

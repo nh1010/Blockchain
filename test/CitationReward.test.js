@@ -47,4 +47,34 @@ contract("CitationReward", (accounts) => {
     const finalBalance = await web3.eth.getBalance(researcher2);
     assert(finalBalance > initialBalance, "Reward not distributed");
   });
+
+  describe("Citation Management", () => {
+    beforeEach(async () => {
+      await citationReward.registerResearcher(
+        "John Doe",
+        "did:example:123",
+        researcher1,
+        { from: accounts[0] }
+      );
+    });
+
+    it("should prevent self-citation", async () => {
+      try {
+        await citationReward.addCitation("did:example:123", {
+          from: researcher1,
+        });
+        assert.fail("Should not allow self-citation");
+      } catch (error) {
+        assert(error.message.includes("Self-citation not allowed"));
+      }
+    });
+
+    it("should track citation count", async () => {
+      await citationReward.addCitation("did:example:123", {
+        from: researcher2,
+      });
+      const researcher = await citationReward.researchers("did:example:123");
+      assert.equal(researcher.citationCount, 1);
+    });
+  });
 });
