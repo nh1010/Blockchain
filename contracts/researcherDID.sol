@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 /// @title ResearcherDID - A smart contract for decentralized researcher identity management.
 contract ResearcherDID {
     
-    // Struct to store researcher information
+    /// @dev Struct to store researcher information.
     struct Researcher {
         string name;
         string institution;
@@ -14,7 +14,7 @@ contract ResearcherDID {
         bool isVerified;
     }
     
-    // Mapping from unique DID (string) to Researcher struct
+    // Mapping from unique DID (string) to Researcher struct.
     mapping(string => Researcher) private researchers;
 
     // Events
@@ -22,13 +22,15 @@ contract ResearcherDID {
     event ResearcherVerified(string indexed did, bool isVerified);
     event ResearcherUpdated(string indexed did, string name, string institution, string fieldOfStudy);
 
-    // Modifier to ensure only registered researchers can perform certain actions
+    /// @dev Modifier to ensure only registered researchers can perform certain actions.
+    /// @param _did The DID of the researcher.
     modifier onlyRegistered(string memory _did) {
         require(researchers[_did].walletAddress != address(0), "Researcher not registered");
         _;
     }
 
-    // Modifier to ensure only verified researchers can perform certain actions
+    /// @dev Modifier to ensure only verified researchers can perform certain actions.
+    /// @param _did The DID of the researcher.
     modifier onlyVerified(string memory _did) {
         require(researchers[_did].isVerified, "Researcher not verified");
         _;
@@ -60,7 +62,8 @@ contract ResearcherDID {
         emit ResearcherRegistered(_did, msg.sender, _name);
     }
 
-    /// @notice Verify a researcher (can be restricted to admin-only in a complete implementation).
+    /// @notice Verify a researcher.
+    /// @dev This function can be restricted to admin-only in a complete implementation.
     /// @param _did The DID of the researcher to verify.
     function verifyResearcher(string memory _did) public onlyRegistered(_did) {
         researchers[_did].isVerified = true;
@@ -90,7 +93,12 @@ contract ResearcherDID {
 
     /// @notice Retrieve researcher details.
     /// @param _did The DID of the researcher to retrieve.
-    /// @return Researcher details including name, institution, fieldOfStudy, walletAddress, registrationDate, and verification status.
+    /// @return name The name of the researcher.
+    /// @return institution The institution or affiliation of the researcher.
+    /// @return fieldOfStudy The field of study for the researcher.
+    /// @return walletAddress The wallet address of the researcher.
+    /// @return registrationDate The registration date of the researcher.
+    /// @return isVerified The verification status of the researcher.
     function getResearcher(string memory _did) public view returns (
         string memory name,
         string memory institution,

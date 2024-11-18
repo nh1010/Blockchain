@@ -16,5 +16,10 @@
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
     "web3": "^4.15.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-jest": "^29.7.0"
   }
 }
