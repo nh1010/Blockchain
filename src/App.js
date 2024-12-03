@@ -6,12 +6,15 @@ import RegisterResearcher from "./components/RegisterResearcher";
 import AddCitation from "./components/AddCitation";
 import WithdrawRewards from "./components/WithdrawRewards";
 import ResearcherProfile from "./components/ResearcherProfile";
+import TxReceipt from "./components/TxReceipt";
 
 const App = () => {
   const [web3, setWeb3] = useState(null);
   const [account, setAccount] = useState(null);
   const [didContract, setDidContract] = useState(null);
   const [citationContract, setCitationContract] = useState(null);
+  const [receipt, setReceipt] = useState(null);
+  const [isBlurred, setIsBlurred] = useState(true);
 
   useEffect(() => {
     const init = async () => {
@@ -33,7 +36,7 @@ const App = () => {
         const citationInstance = new web3Instance.eth.Contract(
           CitationReward.abi,
           deployedCitationNetwork && deployedCitationNetwork.address
-        );
+        ); 
 
         setWeb3(web3Instance);
         setAccount(accounts[0]);
@@ -44,18 +47,42 @@ const App = () => {
     init();
   }, []);
 
+  const handleReceipt = (txReceipt) => {
+    setReceipt(txReceipt);
+  };
+
+  const toggleBlur = () => {
+    setIsBlurred((prev) => !prev);
+  };
+
   return (
     <div>
       <h1>Research Citation DApp</h1>
       {web3 && account ? (
         <>
-          <RegisterResearcher didContract={didContract} account={account} />
+          <p>
+            <strong>Connected Wallet Address: </strong>{" "}
+            <span
+              style={{
+                filter: isBlurred ? "blur(8px)" : "none",
+                transition: "filter 0.3s ease",
+                userSelect: "none",
+              }}
+            >
+              {account}
+            </span>
+            <button onClick={toggleBlur} style={{ marginLeft: "10px" }}>
+              {isBlurred ? "Show" : "Hide"}
+            </button>
+          </p>
+          <TxReceipt receipt={receipt}/>
+          <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
           <AddCitation citationContract={citationContract} account={account} />
           <WithdrawRewards
             citationContract={citationContract}
             account={account}
           />
-          <ResearcherProfile didContract={didContract} />
+          <ResearcherProfile didContract={didContract} onTxReceipt={handleReceipt} />
         </>
       ) : (
         <p>Please connect to MetaMask</p>
