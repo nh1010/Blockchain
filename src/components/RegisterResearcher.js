@@ -1,36 +1,40 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { parseErrorMessage } from "./helper";
 
-const RegisterResearcher = ({ didContract, account }) => {
+const RegisterResearcher = ({ didContract, account, onTxReceipt }) => {
   const [name, setName] = useState("");
-  const [did, setDid] = useState("");
   const [institution, setInstitution] = useState("");
   const [fieldOfStudy, setFieldOfStudy] = useState("");
 
   const register = async () => {
     try {
-      await didContract.methods
-        .registerResearcher(did, name, institution, fieldOfStudy)
+      // Generate a random DID
+      const randomDid = `${uuidv4()}`;
+
+      const txReceipt = await didContract.methods
+        .registerResearcher(randomDid, name, institution, fieldOfStudy)
         .send({ from: account });
-      alert("Researcher registered successfully!");
+      txReceipt.msg = `Researcher registered successfully, your DID is ${randomDid}!`;
+
+      // alert(`Researcher registered successfully, your DID is ${randomDid}!`);
+
+      onTxReceipt(txReceipt);
+
     } catch (error) {
-      console.error(error);
+      const errorMessage = parseErrorMessage(error);
+      alert(`Error: ${errorMessage}`);
     }
   };
 
   return (
     <div>
-      <h3>Register Researcher</h3>
+      <h3>Register Researchers</h3>
       <input
         type="text"
         placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="DID"
-        value={did}
-        onChange={(e) => setDid(e.target.value)}
       />
       <input
         type="text"

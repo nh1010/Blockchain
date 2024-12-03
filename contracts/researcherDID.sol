@@ -13,6 +13,9 @@ contract ResearcherDID {
         uint256 registrationDate;
         bool isVerified;
     }
+
+    // count of total registered researcher
+    uint256 registeredResearcher;
     
     // Mapping from unique DID (string) to Researcher struct.
     mapping(string => Researcher) private researchers;
