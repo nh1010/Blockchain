@@ -61,6 +61,7 @@ contract ResearcherDID {
             registrationDate: block.timestamp,
             isVerified: false
         });
+        registeredResearcher ++;
 
         emit ResearcherRegistered(_did, msg.sender, _name);
     }
