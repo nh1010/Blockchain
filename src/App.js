@@ -45,21 +45,30 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Research Citation DApp</h1>
-      {web3 && account ? (
-        <>
-          <RegisterResearcher didContract={didContract} account={account} />
-          <AddCitation citationContract={citationContract} account={account} />
-          <WithdrawRewards
-            citationContract={citationContract}
-            account={account}
-          />
-          <ResearcherProfile didContract={didContract} />
-        </>
-      ) : (
-        <p>Please connect to MetaMask</p>
-      )}
+    <div className="d-flex flex-column min-vh-100">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a className="navbar-brand" href="#">
+          Research Citation DApp
+        </a>
+      </nav>
+      <div className="d-flex justify-content-center align-items-center flex-grow-1">
+        {web3 && account ? (
+          <div className="text-center">
+            <RegisterResearcher didContract={didContract} account={account} />
+            <hr />
+            <AddCitation citationContract={citationContract} account={account} />
+            <hr />
+            <WithdrawRewards
+              citationContract={citationContract}
+              account={account}
+            />
+            <hr />
+            <ResearcherProfile didContract={didContract} />
+          </div>
+        ) : (
+          <p>Please connect to MetaMask</p>
+        )}
+      </div>
     </div>
   );
 };

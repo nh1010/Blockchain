@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./withdrawRewards.module.css";
 
 const WithdrawRewards = ({ citationContract, account }) => {
   const withdraw = async () => {
@@ -11,9 +12,9 @@ const WithdrawRewards = ({ citationContract, account }) => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <h3>Withdraw Rewards</h3>
-      <button onClick={withdraw}>Withdraw</button>
+      <button className={`btn btn-primary ${classes.button}`} onClick={withdraw}>Withdraw</button>
     </div>
   );
 };
