@@ -56,37 +56,47 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Research Citation DApp</h1>
-      {web3 && account ? (
-        <>
-          <p>
-            <strong>Connected Wallet Address: </strong>{" "}
-            <span
-              style={{
-                filter: isBlurred ? "blur(8px)" : "none",
-                transition: "filter 0.3s ease",
-                userSelect: "none",
-              }}
-            >
-              {account}
-            </span>
-            <button onClick={toggleBlur} style={{ marginLeft: "10px" }}>
-              {isBlurred ? "Show" : "Hide"}
-            </button>
-          </p>
-          <TxReceipt receipt={receipt}/>
-          <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
-          <AddCitation citationContract={citationContract} account={account} />
-          <WithdrawRewards
-            citationContract={citationContract}
-            account={account}
-          />
-          <ResearcherProfile didContract={didContract} onTxReceipt={handleReceipt} />
-        </>
-      ) : (
-        <p>Please connect to MetaMask</p>
-      )}
+    <div className="d-flex flex-column min-vh-100">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a className="navbar-brand" href="#">
+          Research Citation DApp
+        </a>
+      </nav>
+      <div className="d-flex justify-content-center align-items-center flex-grow-1">
+        {web3 && account ? (
+          <div className="text-center">
+              <p>
+              <strong>Connected Wallet Address: </strong>{" "}
+              <span
+                style={{
+                  filter: isBlurred ? "blur(8px)" : "none",
+                  transition: "filter 0.3s ease",
+                  userSelect: "none",
+                }}
+              >
+                {account}
+              </span>
+              <button onClick={toggleBlur} style={{ marginLeft: "10px" }}>
+                {isBlurred ? "Show" : "Hide"}
+              </button>
+            </p>
+            <TxReceipt receipt={receipt}/>
+            <hr />
+            <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
+            <hr />
+            <AddCitation citationContract={citationContract} account={account} />
+            <hr />
+            <WithdrawRewards
+              citationContract={citationContract}
+              account={account}
+            />
+            <hr />
+            <ResearcherProfile didContract={didContract} onTxReceipt={handleReceipt}/>
+          </div>
+        ) : (
+          <p>Please connect to MetaMask</p>
+        )}
+      </div>
     </div>
   );
 };

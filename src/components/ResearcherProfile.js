@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./researcherProfile.module.css";
 import { parseErrorMessage } from "./helper";
 
 const ResearcherProfile = ({ didContract, onTxReceipt }) => {
@@ -59,15 +60,16 @@ const ResearcherProfile = ({ didContract, onTxReceipt }) => {
     : false
 
   return (
-    <div>
+    <div className={classes.container}>
       <h3>Researcher Profile</h3>
       <input
         type="text"
+        className={`form-control ${classes.input}`}
         placeholder="Researcher DID"
         value={did}
         onChange={(e) => setDid(e.target.value)}
       />
-      <button onClick={fetchProfile}>Fetch Profile</button>
+      <button className={`btn btn-primary ${classes.button}`} onClick={fetchProfile}>Fetch Profile</button>
       {account && (
         <div>
           <label>
