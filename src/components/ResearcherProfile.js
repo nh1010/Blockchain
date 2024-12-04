@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./researcherProfile.module.css";
 import { parseErrorMessage } from "./helper";
 
-const ResearcherProfile = ({ didContract, onTxReceipt }) => {
+const ResearcherProfile = ({ didContract, senderAccount, onTxReceipt }) => {
   const [did, setDid] = useState("");
   const [name, setName] = useState("");
   const [institution, setInstitution] = useState("");
@@ -100,7 +100,7 @@ const ResearcherProfile = ({ didContract, onTxReceipt }) => {
           </label>
           <br />
           <p>
-            Wallet Address: {account}
+            Wallet Address: {account.toLocaleLowerCase() === senderAccount.toLocaleLowerCase()? account : "*****"}
           </p>
           <p>
             Registration Date: {new Date(Number(registrationDate) * 1000).toLocaleString()}

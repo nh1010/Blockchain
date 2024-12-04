@@ -6,7 +6,7 @@ const TxReceipt = ({receipt}) => {
     return (
         <div style={{ border: "1px solid #ccc", padding: "10px", marginTop: "20px" }}>
           <h4>============= Transaction Message =============</h4>
-          <p>{receipt.msg}</p>
+          <p style={{fontStyle: "italic", fontWeight: "bold" , color: "darkblue"  }}> " {receipt.msg} "</p>
           <p>Update time: {currentTime}</p>
         {receipt.transactionHash && (
           <>

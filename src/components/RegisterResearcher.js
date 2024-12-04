@@ -41,13 +41,6 @@ const RegisterResearcher = ({ didContract, account, onTxReceipt }) => {
       <input
         type="text"
         className={`form-control ${classes.input}`}
-        placeholder="DID"
-        value={did}
-        onChange={(e) => setDid(e.target.value)}
-      />
-      <input
-        type="text"
-        className={`form-control ${classes.input}`}
         placeholder="Institution"
         value={institution}
         onChange={(e) => setInstitution(e.target.value)}
