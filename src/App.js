@@ -62,7 +62,19 @@ const App = () => {
           Research Citation DApp
         </a>
       </nav>
+
+      {/* Main Content Container */}
       <div className="d-flex justify-content-center align-items-center flex-grow-1">
+        {/* Top Section */}
+        <div 
+          className="d-flex text-center"
+          style={{
+            position: "sticky",
+            backgroundColor: "white",
+            zIndex: 1000,
+            top: 0,
+          }}
+        >
         {web3 && account ? (
           <div className="text-center">
               <p>
@@ -81,23 +93,32 @@ const App = () => {
               </button>
             </p>
             <TxReceipt receipt={receipt}/>
-            <hr />
-            <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
-            <hr />
-            <AddCitation citationContract={citationContract} account={account} />
-            <hr />
-            <WithdrawRewards
-              citationContract={citationContract}
-              account={account}
-            />
-            <hr />
-            <ResearcherProfile didContract={didContract} onTxReceipt={handleReceipt}/>
           </div>
-        ) : (
-          <p>Please connect to MetaMask</p>
+          ) : (
+          <p style={{color : "red", fontWeight : "bold"}}> Please connect to MetaMask </p>
         )}
+        </div>
+      <hr />
+
+      {/* Bottom Section */}
+      
+      {web3 && account ? ( 
+        <div className="d-flex justify-content-center align-items-center flex-grow-1">
+          <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
+          <hr />
+          <AddCitation citationContract={citationContract} account={account} />
+          <hr />
+          <WithdrawRewards
+            citationContract={citationContract}
+            account={account}
+          />
+          <hr />
+          <ResearcherProfile didContract={didContract} senderAccount = {account}onTxReceipt={handleReceipt}/>
+        </div>
+        ):(<p></p>)
+      }
       </div>
-    </div>
+  </div>
   );
 };
 
