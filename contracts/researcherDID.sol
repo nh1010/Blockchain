@@ -123,4 +123,31 @@ contract ResearcherDID {
             researcher.isVerified
         );
     }
+
+    /// @notice Retrive wallet address for paperCitation Contract
+    /// @param _did The DID of the researcher to retrieve.
+    /// @return walletAddress The wallet address of the researcher.
+    function getResearcherWalletAddress(string memory _did) external view returns (
+        address walletAddress
+    ){
+        Researcher memory researcher = researchers[_did];
+        return (
+            researcher.walletAddress
+        );
+    }
+
+    /// @notice check if researcher is verified for paperCitation Contract
+    /// @param _did The DID of the researcher to retrieve.
+    /// @return isVerified The verification status of the researcher.
+    function getResearcherVerified(string memory _did) external view returns (
+        bool isVerified
+    ){
+        require(researchers[_did].walletAddress != address(0), "getResearcherVerified: Researcher not found");
+
+        Researcher memory researcher = researchers[_did];
+        return (
+            researcher.isVerified
+        );
+    }
+
 }

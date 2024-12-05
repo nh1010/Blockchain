@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
-import CitationReward from "./build/contracts/CitationReward.json";
 import ResearcherDID from "./build/contracts/ResearcherDID.json";
 import RegisterResearcher from "./components/RegisterResearcher";
-import AddCitation from "./components/AddCitation";
-import WithdrawRewards from "./components/WithdrawRewards";
+import PaperCitationReward from "./build/contracts/PaperCitationReward.json";
 import ResearcherProfile from "./components/ResearcherProfile";
 import TxReceipt from "./components/TxReceipt";
+import AddResearch from "./components/AddResearch";
 
 const App = () => {
   const [web3, setWeb3] = useState(null);
   const [account, setAccount] = useState(null);
   const [didContract, setDidContract] = useState(null);
-  const [citationContract, setCitationContract] = useState(null);
+  const [paperCitationContract, setPaperCitationContract] = useState(null);
   const [receipt, setReceipt] = useState(null);
   const [isBlurred, setIsBlurred] = useState(true);
+  const [weiValue, setWeiValue] = useState(null);
 
   useEffect(() => {
     const init = async () => {
@@ -26,22 +26,30 @@ const App = () => {
 
         const networkId = await web3Instance.eth.net.getId();
         const deployedDidNetwork = ResearcherDID.networks[networkId];
-        const deployedCitationNetwork = CitationReward.networks[networkId];
+        const deployedPaperCitationRewardNetwork = PaperCitationReward.networks[networkId];
 
         const didInstance = new web3Instance.eth.Contract(
           ResearcherDID.abi,
           deployedDidNetwork && deployedDidNetwork.address
-        );
-
-        const citationInstance = new web3Instance.eth.Contract(
-          CitationReward.abi,
-          deployedCitationNetwork && deployedCitationNetwork.address
         ); 
+
+        const paperCitationInstance = new web3Instance.eth.Contract(
+          PaperCitationReward.abi,
+          deployedPaperCitationRewardNetwork && deployedPaperCitationRewardNetwork.address
+        ); 
+
+        if (!deployedDidNetwork || !deployedPaperCitationRewardNetwork) {
+          console.error("Contracts are not deployed on the current network.");
+          return;
+        }
 
         setWeb3(web3Instance);
         setAccount(accounts[0]);
         setDidContract(didInstance);
-        setCitationContract(citationInstance);
+        setPaperCitationContract(paperCitationInstance);
+        // Set weiValue after web3 instance is initialized
+        setWeiValue(web3Instance.utils.toWei("0.1", "ether"));
+
       }
     };
     init();
@@ -106,12 +114,7 @@ const App = () => {
         <div className="d-flex justify-content-center align-items-center flex-grow-1">
           <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
           <hr />
-          <AddCitation citationContract={citationContract} account={account} />
-          <hr />
-          <WithdrawRewards
-            citationContract={citationContract}
-            account={account}
-          />
+          <AddResearch didContract={didContract} paperCitationContract={paperCitationContract} account={account} weiValue={weiValue} onTxReceipt={handleReceipt}/>
           <hr />
           <ResearcherProfile didContract={didContract} senderAccount = {account}onTxReceipt={handleReceipt}/>
         </div>

@@ -14,3 +14,17 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.styled-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  background-color: #f9f9f9;
+}
+
+.detail-header {
+  color: darkblue;
+  margin-Bottom: 15px;
+}
