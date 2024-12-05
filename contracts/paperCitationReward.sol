@@ -14,6 +14,9 @@ contract PaperCitationReward {
 
     mapping(string => Paper) public papers;
 
+    // count of total registered researcher
+    uint256 registeredResearch;
+    
     uint256 public constant REGISTRATION_FEE = 0.1 ether;
 
     ResearcherDID public researcherDID;
@@ -72,6 +75,7 @@ contract PaperCitationReward {
                 secContributor[--secCount] = wallet;
             }
         }
+        registeredResearch++;
         emit PaperRegistered(_paperID);
 
         distributeRewards(_paperID,primContributor,secContributor);

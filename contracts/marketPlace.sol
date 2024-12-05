@@ -13,6 +13,7 @@ contract CitationReward {
         address citedBy;
         uint timestamp;
     }
+    uint registeredResearcher;
 
     mapping(string => Researcher) public researchers;
     mapping(string => Citation[]) public citations;

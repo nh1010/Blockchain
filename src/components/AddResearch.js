@@ -7,18 +7,21 @@ const AddResearch = ({ didContract, paperCitationContract, account, weiValue, on
   const [authorDID, setAuthorDID] = useState("");
   const [searchrRsearchID, setSearchrRsearchID] = useState("");
   const [searchAuthorDID, setSearchAuthorDID] = useState("");
-  const [referencePaperList, setReferencePaperList] = useState(null);
+  const [referencePaperList, setReferencePaperList] = useState([]);
 
   const addResearch = async () => {
     try {
       // split cited ID into array
       setSearchAuthorDID("");
-      const citedIdArray = citedResearchIDs.split(",").map((id => id.trim()));
+      
+      const citedIdArray = citedResearchIDs != ""
+        ? citedResearchIDs.split(",").map((id) => id.trim())
+        : [];
 
       // check if the register is the author
       const authorWallet = await didContract.methods.getResearcherWalletAddress(authorDID).call();
       if(authorWallet.toLocaleLowerCase() != account.toLocaleLowerCase()){
-        alert(`Only the author using the registered wallet address can register research! ${authorWallet}  ${account}`);
+        alert(`Only the author using the registered wallet address can register research!`);
         onTxReceipt(null);
         return;
       }
@@ -102,7 +105,11 @@ const AddResearch = ({ didContract, paperCitationContract, account, weiValue, on
                 <h4 className={classes["detail-header"]}>Research Details</h4>
                 <p><strong>Research ID:</strong> {searchrRsearchID}</p>
                 <p><strong>Author DID:</strong> {searchAuthorDID}</p>
-                <p><strong>Ref Research IDs:</strong> {referencePaperList}</p>
+                <p><strong>Ref Research IDs:</strong>
+                    <ol>
+                        {referencePaperList.map((paper, index) => (<li key={index}>{paper}</li>))}
+                    </ol>
+                </p>
               </div>
         )
       }
