@@ -1,5 +1,5 @@
 const ResearcherDID = artifacts.require("ResearcherDID");
-const CitationReward = artifacts.require("CitationReward");
+const PaperCitationReward = artifacts.require("PaperCitationReward");
 
 module.exports = async function (deployer) {
   // Deploy the ResearcherDID contract
@@ -7,8 +7,8 @@ module.exports = async function (deployer) {
   const researcherDID = await ResearcherDID.deployed();
   console.log("ResearcherDID deployed at:", researcherDID.address);
 
-  // Deploy the CitationReward contract
-  await deployer.deploy(CitationReward);
-  const citationReward = await CitationReward.deployed();
-  console.log("CitationReward deployed at:", citationReward.address);
+   // Deploy the PaperCitationReward contract with ResearcherDID address
+   await deployer.deploy(PaperCitationReward, researcherDID.address);
+   const paperCitationReward = await PaperCitationReward.deployed();
+   console.log("PaperCitationReward deployed at:", paperCitationReward.address);
 };

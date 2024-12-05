@@ -71,9 +71,10 @@ const ResearcherProfile = ({ didContract, senderAccount, onTxReceipt }) => {
       />
       <button className={`btn btn-primary ${classes.button}`} onClick={fetchProfile}>Fetch Profile</button>
       {account && (
-        <div>
+        <div className={classes["styled-container"]}>
+          <h4 className={classes["detail-header"]}>Researcher Details</h4>
           <label>
-            Name:
+            Name: 
             <input
               type="text"
               value={name}
@@ -82,7 +83,7 @@ const ResearcherProfile = ({ didContract, senderAccount, onTxReceipt }) => {
           </label>
           <br />
           <label>
-            Institution:
+            Institution: 
             <input
               type="text"
               value={institution}
@@ -91,7 +92,7 @@ const ResearcherProfile = ({ didContract, senderAccount, onTxReceipt }) => {
           </label>
           <br />
           <label>
-            Field of Study:
+            Field of Study: 
             <input
               type="text"
               value={fieldOfStudy}
@@ -106,7 +107,7 @@ const ResearcherProfile = ({ didContract, senderAccount, onTxReceipt }) => {
             Registration Date: {new Date(Number(registrationDate) * 1000).toLocaleString()}
           </p>
           <p>Verified: {verified ? "Yes" : "No"}</p>
-          <button onClick={updateProfile} disabled = {!verified || !isModified}>
+          <button className={`btn btn-primary ${classes.button}`} onClick={updateProfile} disabled = {!verified || !isModified}>
             Update Profile
           </button>
           {!verified && (

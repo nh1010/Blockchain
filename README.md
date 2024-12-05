@@ -85,5 +85,8 @@ truffle test
 - Researcher registration with DID
 - Citation management
 - Automatic reward distribution
-- Researcher profile viewing
+- Researcher profile viewing and update
 - MetaMask integration
+
+## User Manual
+LINK: https://docs.google.com/document/d/1v_fWulRCTvPYJ5P1ezoi98VSOulpCTefN0Z-uT29vbI/edit?usp=sharing
