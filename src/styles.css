@@ -1,0 +1,145 @@
+body {
+  background: linear-gradient(135deg, #1a1f2c 0%, #2d3748 100%);
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.blockchain-theme {
+  background: linear-gradient(135deg, #1a1f2c 0%, #2d3748 100%);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.custom-nav {
+  background: rgba(26, 31, 44, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease;
+  color: #e2e8f0;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+.component-card {
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.component-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wallet-address {
+  font-family: 'Courier New', monospace;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 242, 254, 0.1);
+  border-radius: 8px;
+}
+
+.wallet-address.blurred {
+  filter: blur(8px);
+  user-select: none;
+}
+
+.btn-outline-neon {
+  border: 1px solid #00f2fe;
+  color: #00f2fe;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-neon:hover {
+  background: rgba(0, 242, 254, 0.1);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+.hex-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.1;
+  background: repeating-linear-gradient(
+    60deg,
+    #00f2fe 0%,
+    transparent 10%
+  );
+  z-index: -1;
+}
+
+.metamask-prompt {
+  color: #ff9800;
+  font-size: 1.2rem;
+}
+
+.metamask-prompt i {
+  font-size: 3rem;
+}
+
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+
+.form-control::placeholder {
+  color: rgba(226, 232, 240, 0.6) !important;
+}
+
+label {
+  color: #e2e8f0;
+}
+
+.component-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.glass-card h2, 
+.glass-card h3, 
+.glass-card h4,
+.glass-card p,
+.glass-card label {
+  color: #ffffff;
+}
+
+.glass-card button {
+  color: #ffffff;
+  border-color: #ffffff;
+}

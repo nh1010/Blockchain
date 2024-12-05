@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './styles.css';  // Add this import
 import Web3 from "web3";
 import ResearcherDID from "./build/contracts/ResearcherDID.json";
 import RegisterResearcher from "./components/RegisterResearcher";
@@ -64,64 +65,81 @@ const App = () => {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">
-          Research Citation DApp
-        </a>
+    <div className="d-flex flex-column min-vh-100 blockchain-theme">
+      <nav className="navbar navbar-expand-lg custom-nav">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <i className="fas fa-link me-2"></i>
+            Research Citation DApp
+          </a>
+        </div>
       </nav>
 
-      {/* Main Content Container */}
-      <div className="d-flex justify-content-center align-items-center flex-grow-1">
-        {/* Top Section */}
-        <div 
-          className="d-flex text-center"
-          style={{
-            position: "sticky",
-            backgroundColor: "white",
-            zIndex: 1000,
-            top: 0,
-          }}
-        >
-        {web3 && account ? (
-          <div className="text-center">
-              <p>
-              <strong>Connected Wallet Address: </strong>{" "}
-              <span
-                style={{
-                  filter: isBlurred ? "blur(8px)" : "none",
-                  transition: "filter 0.3s ease",
-                  userSelect: "none",
-                }}
-              >
-                {account}
-              </span>
-              <button onClick={toggleBlur} style={{ marginLeft: "10px" }}>
-                {isBlurred ? "Show" : "Hide"}
-              </button>
-            </p>
-            <TxReceipt receipt={receipt}/>
-          </div>
+      <div className="container py-4">
+        <div className="glass-card mb-4">
+          {web3 && account ? (
+            <div className="text-center p-4">
+              <div className="hex-pattern"></div>
+              <h4 className="text-gradient mb-3">Wallet Connection Status</h4>
+              <p className="mb-3">
+                <strong>Connected Address: </strong>
+                <span className={`wallet-address ${isBlurred ? 'blurred' : ''}`}>
+                  {account}
+                </span>
+                <button 
+                  className="btn btn-outline-neon ms-2"
+                  onClick={toggleBlur}
+                >
+                  {isBlurred ? "Show" : "Hide"}
+                </button>
+              </p>
+              <TxReceipt receipt={receipt}/>
+            </div>
           ) : (
-          <p style={{color : "red", fontWeight : "bold"}}> Please connect to MetaMask </p>
-        )}
+            <div className="text-center p-4">
+              <div className="metamask-prompt">
+                <i className="fas fa-wallet mb-3"></i>
+                <p>Please connect to MetaMask to continue</p>
+              </div>
+            </div>
+          )}
         </div>
-      <hr />
 
-      {/* Bottom Section */}
-      
-      {web3 && account ? ( 
-        <div className="d-flex justify-content-center align-items-center flex-grow-1">
-          <RegisterResearcher didContract={didContract} account={account} onTxReceipt={handleReceipt}/>
-          <hr />
-          <AddResearch didContract={didContract} paperCitationContract={paperCitationContract} account={account} weiValue={weiValue} onTxReceipt={handleReceipt}/>
-          <hr />
-          <ResearcherProfile didContract={didContract} senderAccount = {account}onTxReceipt={handleReceipt}/>
-        </div>
-        ):(<p></p>)
-      }
+        {web3 && account && (
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="glass-card component-card">
+                <RegisterResearcher 
+                  didContract={didContract} 
+                  account={account} 
+                  onTxReceipt={handleReceipt}
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="glass-card component-card">
+                <AddResearch 
+                  didContract={didContract}
+                  paperCitationContract={paperCitationContract}
+                  account={account}
+                  weiValue={weiValue}
+                  onTxReceipt={handleReceipt}
+                />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="glass-card component-card">
+                <ResearcherProfile 
+                  didContract={didContract}
+                  senderAccount={account}
+                  onTxReceipt={handleReceipt}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-  </div>
+    </div>
   );
 };
 
