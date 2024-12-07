@@ -21,10 +21,9 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
-  background-color: #f9f9f9;
 }
 
 .detail-header {
-  color: darkblue;
+  color: rgb(196, 136, 88);
   margin-Bottom: 15px;
 }
